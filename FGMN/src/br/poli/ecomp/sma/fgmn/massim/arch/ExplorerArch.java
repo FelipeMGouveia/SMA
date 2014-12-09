@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 
 import jdk.nashorn.internal.objects.Global;
 import br.poli.ecomp.sma.fgmn.massim.arch.map.GlobalMap;
+import br.poli.ecomp.sma.fgmn.massim.arch.map.MapObject.MapEntity;
 
 
 public class ExplorerArch extends AgArch {
@@ -135,6 +136,13 @@ public class ExplorerArch extends AgArch {
 	
 	void corralPerceived(Location loc, Location loc2) throws RevisionFailedException {
         addBel("corral(" + loc.x + "," + loc.y + "," + loc2.x + "," + loc2.y + ")");
+        for(int i = loc.y; i < loc2.y; i++)
+        {
+        	for(int j = loc.x; j< loc2.x; j++)
+        	{
+        		GlobalMap.getInstance().set(j, i, "corral", MapEntity.ALLY_CORRAL);
+        	}
+        }
 	}
 	
     void stepPerceived(int step, Literal pos, List<Literal> percepts, long deadline)
