@@ -1,0 +1,28 @@
+/*
+    Jason Project
+
+    -- created on Maio 11, 2011
+*/
+MAS fgmn {
+   infrastructure: Centralised
+
+   agents:
+           explorador explorer.asl
+           		[host="localhost", port=12300, teamid="randomAgent", username="b#nid", password="1"]
+		   		agentClass		br.poli.ecomp.sma.fgmn.massim.agent.ExplorerAgent
+		   		agentArchClass	br.poli.ecomp.sma.fgmn.massim.arch.ExplorerArch
+		   		beliefBaseClass	br.poli.ecomp.sma.fgmn.massim.agent.ExplorerBeliefBase( 
+		   								"gsize(_,_)",
+		   								"steps(_)",
+		   								"step(_)",
+		   								"opponent(_,_)",
+		   								"step(_)",
+		   								"corral(_,_,_,_)",
+		   								"pos(_,_,_)",
+		   								"ally_pos(key,_,_)",
+		   								"opponent_pos(key,_,_)",
+		   								"cow(key,_,_)",
+		   								"target(_,_)") #8;
+
+   aslSourcePath: "src_asl";
+}
