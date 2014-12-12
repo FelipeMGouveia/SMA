@@ -4,7 +4,7 @@
     -- created on Maio 11, 2011
 */
 MAS fgmn {
-   infrastructure: Centralised
+   infrastructure: Jade
 
    agents:
            explorador explorer.asl
