@@ -3,7 +3,7 @@
    the agent in the center. Each agent is able to see N * N cells. */
    
 /* 
-	Um explorador é um agente que tem por função passear pelo mapa com o objetivo de conhecer o mesmo.
+	Um explorador eh um agente que tem por funcao passear pelo mapa com o objetivo de conhecer o mesmo.
  */
 
 /* Initial beliefs and rules */
@@ -15,13 +15,13 @@
 
 
 /* initial DESIRES */
-!search. //Tem como único desejo buscar pelo mapa
+!search. //Tem como unico desejo buscar pelo mapa
 
-+!search : not pos(_,_,_) //Se não recebeu nenhuma posição aguarda a chegada de uma posição
++!search : not pos(_,_,_) //Se nao recebeu nenhuma posicao aguarda a chegada de uma posicao
 <- .wait("+pos(_,_,_)");
    !search.
    
-+!search : pos(_,_,_) //Se conhece a própria posição então se mova
++!search : pos(_,_,_) //Se conhece a própria posicao entao se mova
 <- !move;
    -pos(_,_,_);
    !search.
