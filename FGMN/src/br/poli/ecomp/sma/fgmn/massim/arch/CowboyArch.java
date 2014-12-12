@@ -2,7 +2,6 @@ package br.poli.ecomp.sma.fgmn.massim.arch;
 
 import jason.JasonException;
 import jason.RevisionFailedException;
-import jason.architecture.AgArch;
 import jason.asSemantics.ActionExec;
 import jason.asSemantics.Agent;
 import jason.asSyntax.Literal;
@@ -18,8 +17,7 @@ import java.util.logging.Logger;
 import br.poli.ecomp.sma.fgmn.massim.arch.map.GlobalMap;
 import br.poli.ecomp.sma.fgmn.massim.arch.map.MapObject.MapEntity;
 
-
-public class ExplorerArch extends AbstractAgentArch {
+public class CowboyArch extends AbstractAgentArch {
 	
 	private static int agentIdCounter = 0;
 

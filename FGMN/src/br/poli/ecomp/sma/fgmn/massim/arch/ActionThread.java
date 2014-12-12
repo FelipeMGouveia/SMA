@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 class ActionThread extends Thread {
 	private static final int actionTimeout = 1500; // timeout to send an action
-	private ExplorerArch arch;
+	private AbstractAgentArch arch;
 	private ServerProxyThread proxy;
 	private Logger logger;
 	private ActionExec lastAction;
@@ -26,7 +26,7 @@ class ActionThread extends Thread {
 	private long timeLastAction = 0;
 	private int cycleCounter = 0;
 
-	ActionThread(ExplorerArch arch, ServerProxyThread proxy, Logger logger) {
+	ActionThread(AbstractAgentArch arch, ServerProxyThread proxy, Logger logger) {
 		super("ActionThread");
 		this.arch = arch;
 		this.proxy = proxy;

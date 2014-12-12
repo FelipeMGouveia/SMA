@@ -44,7 +44,7 @@ class ServerProxyThread extends Thread {
 	private class SocketClosedException extends Exception {
 	}
 
-	private ExplorerArch arch;
+	private AbstractAgentArch arch;
 
 	private Logger logger;
 
@@ -67,7 +67,7 @@ class ServerProxyThread extends Thread {
 
 	private String responseId; // the response id of the current cycle
 
-	public ServerProxyThread(ExplorerArch arq, Logger logger, String host,
+	public ServerProxyThread(AbstractAgentArch arq, Logger logger, String host,
 			int port, String username, String password) {
 		super("ServerProxyThread");
 

@@ -22,7 +22,40 @@ MAS fgmn {
 		   								"ally_pos(key,_,_)",
 		   								"opponent_pos(key,_,_)",
 		   								"cow(key,_,_)",
-		   								"target(_,_)") #8;
+		   								"target(_,_)") #4;
+			peao cowboy.asl
+				[host="localhost", port=12301, teamid="cowboyAgent", username="b#nid", password="1"]
+				agentClass		br.poli.ecomp.sma.fgmn.massim.agent.CowboyAgent
+		   		agentArchClass	br.poli.ecomp.sma.fgmn.massim.arch.CowboyArch
+		   		beliefBaseClass	br.poli.ecomp.sma.fgmn.massim.agent.CowboyBeliefBase( 
+		   								"gsize(_,_)",
+		   								"steps(_)",
+		   								"step(_)",
+		   								"opponent(_,_)",
+		   								"step(_)",
+		   								"corral(_,_,_,_)",
+		   								"pos(_,_,_)",
+		   								"ally_pos(key,_,_)",
+		   								"opponent_pos(key,_,_)",
+		   								"cow(key,_,_)",
+		   								"target(_,_)") #2;
+		   								
+			porteiro doorman.asl
+				[host="localhost", port=12302, teamid="doormanAgent", username="b#nid", password="1"]
+				agentClass		br.poli.ecomp.sma.fgmn.massim.agent.DoormanAgent
+		   		agentArchClass	br.poli.ecomp.sma.fgmn.massim.arch.DoormanArch
+		   		beliefBaseClass	br.poli.ecomp.sma.fgmn.massim.agent.DoormanBeliefBase( 
+		   								"gsize(_,_)",
+		   								"steps(_)",
+		   								"step(_)",
+		   								"opponent(_,_)",
+		   								"step(_)",
+		   								"corral(_,_,_,_)",
+		   								"pos(_,_,_)",
+		   								"ally_pos(key,_,_)",
+		   								"opponent_pos(key,_,_)",
+		   								"cow(key,_,_)",
+		   								"target(_,_)") #2;
 
    aslSourcePath: "src_asl";
 }
