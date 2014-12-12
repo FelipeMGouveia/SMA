@@ -18,7 +18,7 @@
 !gotoCow. // Desejo de alcançar uma vaca
 
 +!returnCow : pos(X,Y,_) & cow(Cid,Cx,Cy)
-<- 
+<- br.poli.ecomp.sma.fgmn.massim.action.ReturnCow(X, Y, Cx, Cy, Cid);
   
 +!goToCow : pos(X,Y,_) & cow(Cid,Cx,Cy) //Se um explorador achou uma vaca, vamos até ela
 <-  br.poli.ecomp.sma.fgmn.massim.action.FindDirection(X,Y,NewX,NewY,Direction); 
