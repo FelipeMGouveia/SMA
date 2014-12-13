@@ -15,12 +15,14 @@
 
 
 /* initial DESIRES */
-!waitFence.
+!waitSwitch.
 
-+!waitFence : fence(_, _, _)
-<- .print("ACHEI UMA CERCA");
-	!waitFence.
++!waitSwitch : not pos(_,_,_)
+	.wait("+pos(_,_,_)");
+	.wait("+switch(_,_,_)");
+	.!waitSwitch.
 	
-+!waitFence : not fence(_, _, _)
-<- .wait("+fence(_,_,_)");
-	!waitFence.
++!waitSwitch : pos(X,Y,_) & switch(corral,Cx,Cy) //No switch o ID diz se e corral ou other
+<- br.poli.ecomp.sma.fgmn.massim.action.FindDirection(X,Y,Cx,Cy,Direction);
+   moveTo(Direction);
+   !waitSwitch.
