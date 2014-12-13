@@ -26,6 +26,16 @@ public class FindDirection extends DefaultInternalAction
 		double vNewX = ((NumberTerm)newX).solve();
 		double vNewY = ((NumberTerm)newY).solve();
 		
+		String dir = getDirection(vx, vy, vNewX, vNewY);
+
+		//Direction result = Direction.valueOf(dir);
+		
+		un.unifies(direction, new Atom(dir)); 
+
+		return true;
+	}
+
+	private String getDirection(double vx, double vy, double vNewX, double vNewY) {
 		String dir = "";
 		
 		if(vy < vNewY)
@@ -45,12 +55,7 @@ public class FindDirection extends DefaultInternalAction
 		{
 			dir += "east";
 		}
-
-		//Direction result = Direction.valueOf(dir);
-		
-		un.unifies(direction, new Atom(dir)); 
-
-		return true;
+		return dir;
 	}
 }
 
