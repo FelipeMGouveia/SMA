@@ -27,18 +27,22 @@
    !search.
    
 +!search : pos(X,Y,_) & cow(Cid,Cx,Cy)
-<- br.poli.ecomp.sma.fgmn.massim.action.PopulateGlobalMap(X, Y, Cx, Cy, Cid, "cow");
+<- .broadcast(tell, cow(Cid,Cx,Cy));
    !move.
    
 +!search : pos(X,Y,_) & switch(Cid,Cx,Cy)
-<- br.poli.ecomp.sma.fgmn.massim.action.PopulateGlobalMap(X, Y, Cx, Cy, Cid, "switch");
+<- .broadcast(tell, switch(Cid,Cx,Cy));
+   !move.
+
++!search : pos(X,Y,_) & fence(Cid,Cx,Cy)
+<- .broadcast(tell, fence(Cid,Cx,Cy));
    !move.
    
 +!search : pos(X,Y,_) & corral(Cx,Cy, Type)
-<- br.poli.ecomp.sma.fgmn.massim.action.PopulateGlobalMap(X, Y, Cx, Cy, Cid, Type);
+<- .broadcast(tell, corral(Cx,Cy, Type));
    !move.
    
-+!move : pos(X,Y,ID) 
++!move : pos(X,Y,ID)
 <- br.poli.ecomp.sma.fgmn.massim.action.UnknownPos(X,Y,NewX,NewY,ID);
    br.poli.ecomp.sma.fgmn.massim.action.FindDirection(X,Y,NewX,NewY,Direction);
    moveTo(Direction);

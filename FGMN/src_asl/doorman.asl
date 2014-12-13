@@ -15,24 +15,14 @@
 
 
 /* initial DESIRES */
-!search. //Tem como unico desejo buscar pelo mapa
+!waitSwitch.
 
-+!search : not pos(_,_,_) //Se nao recebeu nenhuma posicao aguarda a chegada de uma posicao
-<- .wait("+pos(_,_,_)");
-   !search.
-   
-+!search : pos(_,_,_) //Se conhece a própria posicao entao se mova
-<- !move;
-   -pos(_,_,_);
-   !search.
-   
-+!search : pos(X,Y,_) & cow(Cid,Cx,Cy) //Se achou uma vaca diga aos colegas!
-<- br.poli.ecomp.sma.fgmn.massim.action.PopulateGlobalMap(X, Y, Cx, Cy, Cid, "cow");
-   !move.
-   
-+!move : pos(X,Y,ID) 
-<- br.poli.ecomp.sma.fgmn.massim.action.UnknownPos(X,Y,NewX,NewY,ID);
-   br.poli.ecomp.sma.fgmn.massim.action.FindDirection(X,Y,NewX,NewY,Direction);
++!waitSwitch : not pos(_,_,_)
+	.wait("+pos(_,_,_)");
+	.wait("+switch(_,_,_)");
+	.!waitSwitch.
+	
++!waitSwitch : pos(X,Y,_) & switch(corral,Cx,Cy)//No switch o ID diz se e corral ou other
+<- br.poli.ecomp.sma.fgmn.massim.action.FindDirectionDoorman(X,Y,Cx,Cy,Direction);
    moveTo(Direction);
-   !search.
-   
+   !waitSwitch.
