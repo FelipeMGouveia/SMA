@@ -33,6 +33,12 @@ public class PopulateGlobalMap extends DefaultInternalAction{
 		case "ally":
 			GlobalMap.getInstance().set(ox,oy,oid, MapEntity.COW);
 			break;
+		case "switch":
+			GlobalMap.getInstance().set(ox,oy,oid, MapEntity.ALLY_CORRAL_SWITCH);
+			break;
+		case "corral":
+			GlobalMap.getInstance().set(ox,oy,oid, MapEntity.ALLY_CORRAL);
+			break;
 		}
 		
 		return true;

@@ -26,8 +26,16 @@
    -pos(_,_,_);
    !search.
    
-+!search : pos(X,Y,_) & cow(Cid,Cx,Cy) //Se achou uma vaca diga aos colegas!
++!search : pos(X,Y,_) & cow(Cid,Cx,Cy)
 <- br.poli.ecomp.sma.fgmn.massim.action.PopulateGlobalMap(X, Y, Cx, Cy, Cid, "cow");
+   !move.
+   
++!search : pos(X,Y,_) & switch(Cid,Cx,Cy)
+<- br.poli.ecomp.sma.fgmn.massim.action.PopulateGlobalMap(X, Y, Cx, Cy, Cid, "switch");
+   !move.
+   
++!search : pos(X,Y,_) & corral(Cx,Cy, Type)
+<- br.poli.ecomp.sma.fgmn.massim.action.PopulateGlobalMap(X, Y, Cx, Cy, Cid, Type);
    !move.
    
 +!move : pos(X,Y,ID) 
