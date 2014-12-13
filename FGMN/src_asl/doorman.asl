@@ -22,7 +22,7 @@
 	.wait("+switch(_,_,_)");
 	.!waitSwitch.
 	
-+!waitSwitch : pos(X,Y,_) & switch(corral,Cx,Cy) //No switch o ID diz se e corral ou other
-<- br.poli.ecomp.sma.fgmn.massim.action.FindDirection(X,Y,Cx,Cy,Direction);
++!waitSwitch : pos(X,Y,_) & switch(corral,Cx,Cy)//No switch o ID diz se e corral ou other
+<- br.poli.ecomp.sma.fgmn.massim.action.FindDirectionDoorman(X,Y,Cx,Cy,Direction);
    moveTo(Direction);
    !waitSwitch.

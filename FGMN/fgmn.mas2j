@@ -22,7 +22,7 @@ MAS fgmn {
 		   								"ally_pos(key,_,_)",
 		   								"opponent_pos(key,_,_)",
 		   								"cow(key,_,_)",
-		   								"target(_,_)") #1;
+		   								"target(_,_)") #9;
 			peao cowboy.asl
 				[host="localhost", port=12300, teamid="fgmn", username="b#nid", password="1"]
 				agentClass		br.poli.ecomp.sma.fgmn.massim.agent.CowboyAgent
@@ -38,7 +38,7 @@ MAS fgmn {
 		   								"ally_pos(key,_,_)",
 		   								"opponent_pos(key,_,_)",
 		   								"cow(key,_,_)",
-		   								"target(_,_)") #1;
+		   								"target(_,_)") #9;
 		   								
 			porteiro doorman.asl
 				[host="localhost", port=12300, teamid="fgmn", username="b#nid", password="1"]
