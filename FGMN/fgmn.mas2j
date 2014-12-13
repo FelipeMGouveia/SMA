@@ -8,7 +8,7 @@ MAS fgmn {
 
    agents:
            explorador explorer.asl
-           		[host="localhost", port=12300, teamid="randomAgent", username="b#nid", password="1"]
+           		[host="localhost", port=12300, teamid="fgmn", username="b#nid", password="1"]
 		   		agentClass		br.poli.ecomp.sma.fgmn.massim.agent.ExplorerAgent
 		   		agentArchClass	br.poli.ecomp.sma.fgmn.massim.arch.ExplorerArch
 		   		beliefBaseClass	br.poli.ecomp.sma.fgmn.massim.agent.ExplorerBeliefBase( 
@@ -22,9 +22,9 @@ MAS fgmn {
 		   								"ally_pos(key,_,_)",
 		   								"opponent_pos(key,_,_)",
 		   								"cow(key,_,_)",
-		   								"target(_,_)") #4;
+		   								"target(_,_)") #1;
 			peao cowboy.asl
-				[host="localhost", port=12301, teamid="cowboyAgent", username="b#nid", password="1"]
+				[host="localhost", port=12300, teamid="fgmn", username="b#nid", password="1"]
 				agentClass		br.poli.ecomp.sma.fgmn.massim.agent.CowboyAgent
 		   		agentArchClass	br.poli.ecomp.sma.fgmn.massim.arch.CowboyArch
 		   		beliefBaseClass	br.poli.ecomp.sma.fgmn.massim.agent.CowboyBeliefBase( 
@@ -38,10 +38,10 @@ MAS fgmn {
 		   								"ally_pos(key,_,_)",
 		   								"opponent_pos(key,_,_)",
 		   								"cow(key,_,_)",
-		   								"target(_,_)") #2;
+		   								"target(_,_)") #1;
 		   								
 			porteiro doorman.asl
-				[host="localhost", port=12302, teamid="doormanAgent", username="b#nid", password="1"]
+				[host="localhost", port=12300, teamid="fgmn", username="b#nid", password="1"]
 				agentClass		br.poli.ecomp.sma.fgmn.massim.agent.DoormanAgent
 		   		agentArchClass	br.poli.ecomp.sma.fgmn.massim.arch.DoormanArch
 		   		beliefBaseClass	br.poli.ecomp.sma.fgmn.massim.agent.DoormanBeliefBase( 
@@ -55,7 +55,7 @@ MAS fgmn {
 		   								"ally_pos(key,_,_)",
 		   								"opponent_pos(key,_,_)",
 		   								"cow(key,_,_)",
-		   								"target(_,_)") #2;
+		   								"target(_,_)") #1;
 
    aslSourcePath: "src_asl";
 }

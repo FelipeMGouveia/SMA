@@ -15,7 +15,8 @@
 
 
 /* initial DESIRES */
-!search. //Tem como unico desejo buscar pelo mapa
+/*!search. //Tem como unico desejo buscar pelo mapa
+
 
 +!search : not pos(_,_,_) //Se nao recebeu nenhuma posicao aguarda a chegada de uma posicao
 <- .wait("+pos(_,_,_)");
@@ -35,4 +36,6 @@
    br.poli.ecomp.sma.fgmn.massim.action.FindDirection(X,Y,NewX,NewY,Direction);
    moveTo(Direction);
    !search.
-   
+*/
++!fence(Type, Cx, Cy) : true
+<- .print("ACHEI UM BOTÃO").
