@@ -4,6 +4,7 @@ import jason.JasonException;
 import jason.RevisionFailedException;
 import jason.asSemantics.ActionExec;
 import jason.asSemantics.Agent;
+import jason.asSemantics.Message;
 import jason.asSyntax.Literal;
 import jason.asSyntax.NumberTerm;
 import jason.environment.grid.Location;
@@ -211,6 +212,12 @@ public class DoormanArch extends AbstractAgentArch {
 		} else {
 			//super.act(action, feedback);	
 		}
+		
+		try {
+			broadcast(new Message());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Override
@@ -221,4 +228,5 @@ public class DoormanArch extends AbstractAgentArch {
 
 		super.stopAg();
 	}
+	
 }

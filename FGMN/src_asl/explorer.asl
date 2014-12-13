@@ -27,20 +27,19 @@
    !search.
    
 +!search : pos(X,Y,_) & cow(Cid,Cx,Cy)
-<- broadcast(achieve, cow(Cid,Cx,Cy));
+<- .broadcast(tell, cow(Cid,Cx,Cy));
    !move.
    
 +!search : pos(X,Y,_) & switch(Cid,Cx,Cy)
-<- .broadcast(achieve, switch(Cid,Cx,Cy));
+<- .broadcast(tell, switch(Cid,Cx,Cy));
    !move.
 
 +!search : pos(X,Y,_) & fence(Cid,Cx,Cy)
-<- .broadcast(achieve, fence(Cid,Cx,Cy));
+<- .broadcast(tell, fence(Cid,Cx,Cy));
    !move.
    
 +!search : pos(X,Y,_) & corral(Cx,Cy, Type)
-<- .broadcast(achieve, corral(Cx,Cy, Type));
-   .send(porteiro, achieve, fence(Cid,Cx,Cy));
+<- .broadcast(tell, corral(Cx,Cy, Type));
    !move.
    
 +!move : pos(X,Y,ID)
